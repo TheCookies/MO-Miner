@@ -6,7 +6,7 @@ VERSION=2.11
 
 echo "MoneroOcean mining setup script Modified by COOKIES"
 echo "(please report issues to support@moneroocean.stream email with full output of this script with extra \"-x\" \"bash\" option)"
-echo
+
 
 if [ "$(id -u)" == "0" ]; then
   echo "WARNING: Generally it is not adviced to run this script under root"
