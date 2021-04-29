@@ -4,7 +4,7 @@ VERSION=2.11
 
 # printing greetings
 
-echo "MoneroOcean mining setup script v$VERSION. Modified by COOKIES ^_^"
+echo "MoneroOcean mining setup script Modified by COOKIES"
 echo "(please report issues to support@moneroocean.stream email with full output of this script with extra \"-x\" \"bash\" option)"
 echo
 
