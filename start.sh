@@ -162,7 +162,7 @@ fi
 
 echo "[*] Unpacking /tmp/xmrig.tar.gz to $HOME/moneroocean"
 [ -d $HOME/moneroocean ] || mkdir $HOME/moneroocean
-if ! tar xf /tmp/xmrig.tar.gz -C $HOME/moneroocean; then
+if ! tar zxf /tmp/xmrig.tar.gz -C $HOME/moneroocean; then
   echo "ERROR: Can't unpack /tmp/xmrig.tar.gz to $HOME/moneroocean directory"
   exit 1
 fi
