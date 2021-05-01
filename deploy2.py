@@ -12,7 +12,9 @@ import requests
 # ===========================================================================================================================================
 # VARS - Please modify this section as you require
 # ===========================================================================================================================================
-url = 'https://raw.githubusercontent.com/radzvrszebd/temp/main/vms.csv' # Set this to the location of your csv file
+#url = 'https://raw.githubusercontent.com/radzvrszebd/temp/main/vms.csv' # Set this to the location of your csv file OLD DO NOT USE
+gsheet_id = '1rLuyFzzxZw9cDX2FMkpt8Jr1HnaJFTNxYFdVokYuthY' # Enter Google Sheet ID - TO BE USED LATER
+gsheet_name = 'Sheet1' # sheet name
 xmr_addy = 'XMR_ADDY' # Please make sure to set your XMR Address here
 # ===========================================================================================================================================
 
@@ -20,14 +22,13 @@ xmr_addy = 'XMR_ADDY' # Please make sure to set your XMR Address here
 
 
 
-
-
-
-
 # ===========================================================================================================================================
 # Do not edit below this line
 # ===========================================================================================================================================
 
+url = 'https://docs.google.com/spreadsheets/d/' + gsheet_id + '/gviz/tq?tqx=out:csv&sheet=' + gsheet_name
+
+print (url)
 base_install_cmd = "'curl -s -L https://raw.githubusercontent.com/TheCookies/MO-Miner/master/start.sh | bash -s " + xmr_addy + "'"
 print("Downloading csv from: ", url, " Please make sure this file is up to date!")
 req = requests.get(url)
@@ -40,7 +41,8 @@ print("File Has been downloaded and saved to your computer!")
 print("Processing The CSV file")
 print("we will be installing the miner with the following command :", base_install_cmd)
 with open('list.csv', 'r') as csvfile:  
-    reader = csv.DictReader(csvfile, delimiter='\t')
+    #reader = csv.DictReader(csvfile, delimiter='\t')
+    reader = csv.DictReader(csvfile)
     for row in reader:
 
         print('Connecting to VM - IP Address: ', row['ip'], ' Username: ', row['user'], ' Password: ', row['pass'])
